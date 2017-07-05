@@ -567,7 +567,8 @@ ruby_block 'wait for initialization' do
          sleep 60
       end
   end
-end if wait_for_initialization
+  only_if { wait_for_initialization }
+end
 
 include_recipe "compute::ssh_port_wait"
 
